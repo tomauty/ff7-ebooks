@@ -1,2 +1,21 @@
 import twitter
-api = twitter.Api()
+import random
+#opens credentials file
+credlines = open('credentials.secret','r').read().splitlines()
+ck = credlines[0]
+cs = credlines[1]
+atk = credlines[2]
+ats = credlines[3]
+
+#log into the API
+api = twitter.Api(ck, cs, atk, ats)
+
+#read in quotes
+quotes 	= open('ff7quotes.txt','r').read().splitlines()
+random.seed(None)
+
+#choose quotes at random
+status	= quotes[random.randint(0, len(quotes) - 1)]
+while len(status) > 140 or len(status) <= 5:
+	status = quotes[random.randint(0, len(quotes) - 1)]
+api.PostUpdate(status)
