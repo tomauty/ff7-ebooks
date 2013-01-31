@@ -1,0 +1,2 @@
+concatenate on non-puncuated line endings
+trim.py for stage dirs strip parens cat >> ff7quotes
