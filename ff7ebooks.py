@@ -1,14 +1,11 @@
 import twitter
 import random
-#opens credentials file
-credlines = open('credentials.secret','r').read().splitlines()
-ck = credlines[0]
-cs = credlines[1]
-atk = credlines[2]
-ats = credlines[3]
-
+import os
 #log into the API
-api = twitter.Api(ck, cs, atk, ats)
+api = twitter.Api(consumer_key = os.getenv(CONSUMER_KEY),
+		  consumer_secret=os.getenv(CONSUMER_SECRET),
+		  access_token_key=os.getenv(ACCESS_TOKEN_KEY),
+		  access_token_secret=os.getenv(ACCESS_TOKEN_SECRET))
 
 #read in quotes
 quotes 	= open('ff7quotes.txt','r').read().splitlines()
