@@ -2,10 +2,10 @@ import twitter
 import random
 import os
 #log into the API
-api = twitter.Api(consumer_key = os.getenv(CONSUMER_KEY),
-		  consumer_secret=os.getenv(CONSUMER_SECRET),
-		  access_token_key=os.getenv(ACCESS_TOKEN_KEY),
-		  access_token_secret=os.getenv(ACCESS_TOKEN_SECRET))
+api = twitter.Api(consumer_key = os.environ['CONSUMER_KEY'],
+		  consumer_secret=os.environ['CONSUMER_SECRET'],
+		  access_token_key=os.environ['ACCESS_TOKEN_KEY'],
+		  access_token_secret=os.environ['ACCESS_TOKEN_SECRET'])
 
 #read in quotes
 quotes 	= open('ff7quotes.txt','r').read().splitlines()
