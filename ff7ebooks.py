@@ -19,8 +19,8 @@ while len(status) > 140 or len(status) <= 5:
 	#Concatenate next line if quote continues on next line
 	if len(status) is 0:
 		status = "NULL"
-	if status[-1].islower():
-		status = status + " " + quotes[index+1]
+	while status[-1].islower():
+		status = status + " " + quotes[index++]
 	if status[0].islower():
 		status = quotes[index-1] + " " + status
 api.PostUpdate(status)
