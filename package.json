@@ -1,0 +1,24 @@
+{
+  "name": "ff7-ebooks",
+  "version": "0.0.1",
+  "description": "FFVII quotes sent to Twitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomauty/ff7-ebooks.git"
+  },
+  "author": "Tom Auty <tom.auty@gmail.com> (http://tomauty.cc/)",
+  "license": "GPLv3+",
+  "bugs": {
+    "url": "https://github.com/tomauty/ff7-ebooks/issues"
+  },
+  "homepage": "https://github.com/tomauty/ff7-ebooks",
+  "dependencies": {
+    "coffee-script": "^1.9.1",
+    "lodash": "^3.6.0",
+    "twitter": "^1.2.5"
+  }
+}
