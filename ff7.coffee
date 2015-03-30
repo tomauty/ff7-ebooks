@@ -21,17 +21,18 @@ module.exports = ->
   # Create full sentences from a slightly malformed FF7 script
   script = _.reduceRight script.split("\n"), (result, line) ->
     skip = false
+    line = line.trim()
     if (_.uniq line).length < 2 then return result
 
     # Wait until we hit the beginning of a sentence to push these fragments
     if line.charAt(0).match(/[a-z]/)
       hold += line
       skip = true
-    if skip then return result
+      return result
 
     # Finally we have a real sentence, let's make it a choice
-    if hold then hold = " #{hold}"
-    result.push "#{line}#{hold}"
+    if line + hold >= 139 then return result
+    result.push "#{line} #{hold}".trim()
     hold = ""
 
     return result
